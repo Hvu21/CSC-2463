@@ -52,7 +52,10 @@ function setup() {
   createCanvas(500, 500);
 
   // Start playing background music
-  backgroundMusicMenu.loop();
+  setTimeout(() => {
+    // Start playing background music
+    backgroundMusicMenu.loop();
+  }, 5000); // Delay of 1000 milliseconds (1 second)
 }
 
 function draw() {
