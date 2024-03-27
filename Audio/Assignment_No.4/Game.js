@@ -26,7 +26,8 @@ let missedBugSound;
 let gameState = "menu"; // Initial game state
 let gameOverSound; // Variable to store the game over sound
 
-let backgroundMusicMenu; // Background music for menu
+let backgroundMusicMenu1; // Background music for menu
+let backgroundMusicMenu2;
 let backgroundMusicLevel1;
 let backgroundMusicLevel2;
 
@@ -43,7 +44,8 @@ function preload() {
   missedBugSound = loadSound('Sounds/missed_bug_sound.mp3');
   gameOverSound = loadSound('Sounds/game_over_sound.mp3');  
   
-  backgroundMusicMenu = loadSound('Sounds/menu_music.mp3'); // Menu background music
+  backgroundMusicMenu1 = loadSound('Sounds/menu_music1.mp3'); // Menu background music
+  backgroundMusicMenu2 = loadSound('Sounds/menu_music2.mp3'); // Menu background music
   backgroundMusicLevel1 = loadSound('Sounds/background_music_1.mp3'); // Level background music
   backgroundMusicLevel2 = loadSound('Sounds/background_music_2.mp3'); // Level background music
 }
@@ -52,7 +54,7 @@ function setup() {
   createCanvas(500, 500);
 
   // Start playing background music
-  backgroundMusicMenu.loop();
+  backgroundMusicMenu2.loop();
 }
 
 function draw() {
@@ -62,10 +64,10 @@ function draw() {
     displayMenu();
   } else if (gameState === "level1") {
     playLevel1();
-    backgroundMusicMenu.stop();
+    backgroundMusicMenu2.stop();
   } else if (gameState === "level2") {
     playLevel2();
-    backgroundMusicMenu.stop();
+    backgroundMusicMenu2.stop();
   }
   // Check if the game over condition is met
   if (timer === 0 && !gameOverSound.isPlaying()) {
